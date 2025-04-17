@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 
+import connectDB from "./config/db.js";
+
 dotenv.config();
 
 const app = express();
@@ -23,4 +25,5 @@ app.use("/api/auth", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  connectDB();
 });
